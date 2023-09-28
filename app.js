@@ -28,7 +28,7 @@ app.use(rateLimiter.rateLimit({
 }))
 
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://pizza-delevery-app-five.vercel.app",
     credentials: true,
 }))
 
