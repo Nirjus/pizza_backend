@@ -63,8 +63,16 @@ const loginController = async (req, res, next) => {
 const logoutController = async (req, res, next) => {
 
     try {
-           res.clearCookie("access_token");
-           res.clearCookie("refresh_token");
+           res.clearCookie("access_token",{
+            httpOnly:true,
+            secure:true,
+            sameSite:"none",
+           });
+           res.clearCookie("refresh_token",{
+            httpOnly:true,
+            secure:true,
+            sameSite:"none",
+           });
 
         return successResponse(res, {
             statusCode: 200,
